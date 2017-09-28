@@ -13,8 +13,6 @@
   var bornTime = new Date(2017, 3, 18, 17, 3).getTime()
   root.setInterval(function () {
     var duration = Date.now() - bornTime
-    console.log(new Date())
-
     duration = duration / ONE_SECOND
 
     var ss = Math.floor(duration % SECONDS)
@@ -24,9 +22,8 @@
     var hh = Math.floor(duration % HOURS)
     duration = duration / HOURS
     var dd = Math.floor(duration % ONE_DAY)
-    console.log(dd, hh, mm, ss)
 
-    document.querySelector('.time').innerHTML = dd + ' 天 ' + hh  + ' 小时 '+ mm  + ' 分钟 '+ ss + ' 秒 '
+    document.querySelector('div.time').innerHTML = dd + ' 天 ' + hh  + ' 小时 '+ mm  + ' 分钟 '+ ss + ' 秒 '
 
   }, 1000);
 }(window))
