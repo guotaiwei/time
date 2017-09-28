@@ -26,7 +26,7 @@
     var dd = Math.floor(duration % ONE_DAY)
     console.log(dd, hh, mm, ss)
 
-    document.querySelector('div').innerHTML = dd + ' 天 ' + hh  + ' 小时 '+ mm  + ' 分钟 '+ ss + ' 秒 '
+    document.querySelector('.time').innerHTML = dd + ' 天 ' + hh  + ' 小时 '+ mm  + ' 分钟 '+ ss + ' 秒 '
 
   }, 1000);
 }(window))
