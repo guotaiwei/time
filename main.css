@@ -1,0 +1,112 @@
+@mixin eye-shape($height, $width, $radius){
+  height: $height;
+  width: $width;
+  border-radius: $radius;
+}
+
+html,body{
+  height: 100%;
+  background: #85C7F2;
+  margin: 0;
+  overflow:hidden;
+  color: #fff;
+}
+
+.sun {
+  height: 130px;
+  width: 130px;
+  position: relative;
+  margin: 0 auto;
+  top: calc(50% - 200px);
+}
+
+.sun .sunrays {
+  animation:spin 15s linear infinite;
+  box-shadow: 0px 0px 100px lighten(#FFDD4A, 10%);
+  height: 130px;
+  width: 130px;
+}
+
+.circle{
+  height: 130px;
+  width: 130px;
+  z-index: 1;
+  background: lighten(#FFDD4A, 10%);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.sunrays span{
+  background: #FFDD4A;
+  width:130px;
+  height:130px;
+  position: absolute;
+}
+
+.sunrays span:first-child {
+  transform: rotate(30deg);
+}
+
+.sunrays span:nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.eyes{
+  position: relative;
+  top: 50px;
+  z-index: 2;
+}
+
+.eyes .left,
+.eyes .right {
+  background: black;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  animation: blink 2.5s linear infinite;
+}
+
+.eyes .left {
+  left: 47%;
+}
+
+.eyes .right {
+  left: 15%;
+}
+
+@keyframes spin {
+  0% {-webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+  0% {-moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); }
+}
+@keyframes blink {
+  0% {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+  }
+  5% {
+    height: 1px;
+    width: 8px;
+    border-radius: 0;
+  }
+  10% {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+  }
+}
+
+/* above codes are from https://codepen.io/genevievecm/pen/JXWyqX */
+
+h1 {
+  margin-top: 200px;
+  text-align: center;
+}
+.time {
+  text-align: center;
+}
